@@ -18,24 +18,25 @@ html(lang = 'en')
 
 
     section.container#title
-      .row.text-center
-        .col
-          img(src = 'img/varg-logo.svg' width = '88pt').img-fluid
-      .row.text-center
-        .col
-          h1.mt-5 #[strong.font-weight-bold Visual Analytics] Research Group
+      header
+        .row.text-center
+          .col
+            //- img(src = 'img/varg-logo.svg' width = '88pt').img-fluid
+            img(src = 'img/varg-logo-v1.png' width = '192pt').img-fluid
+        .row.text-center
+          .col
+            h1.mt-5 #[strong.font-weight-bold varg.dev]&thinsp;&mdash;&thinsp;Visual Analytics Research Group
 
 
     section.container
 
-      .row.text-center
+      .row
         .col-12
-          p #[strong varg] is a focus group of the #[a(href = 'https://hpi.de/doellner/home.html') Computer Graphics Systems Group] based in Germany, at the #[a(href = 'https://hpi.de/') Hasso Plattner Institute], Faculty for Digital Engineering, University of Potsdam.
+          p We (#[strong varg]) are a focus group of the #[a(href = 'https://hpi.de/doellner/home.html') Computer Graphics Systems Group] based in Germany, at the #[a(href = 'https://hpi.de/') Hasso Plattner Institute], Faculty for Digital Engineering, University of Potsdam.
 
-          p Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+          p This website aggregates early prototypes or results of our ongoing research, latest visualizations, APIs, pictures and videos, as well as further resources. It serves to facilitate research collaboration and streamline (at least a little bit) development of research prototypes. Please note that some of the visualizations and APIs are shared in an as-early-as-possible, work-in-progress, bug-infested stage for internal review and discussion. In order to access the varg-api, please request access rights by contacting #[a(href = 'mailto:admin@varg.dev') admin@varg.dev].
 
-          p Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-
+          p Please explore, evaluate, test, and #[a(href = 'mailto:feedback@varg.dev') share your feedback with us]. Our previously published work is usually referenced at #[a(href = 'https://www.researchgate.net/project/Information-Cartography') Information Cartography on ResearchGate].
 
 
     section.container#visualizations
@@ -64,22 +65,24 @@ html(lang = 'en')
                     button(type = 'button').btn.btn-sm.btn-dark.mr-2 #{branch.name}
 
 
-            h3.mt-4 &#x2002 #[span.font-weight-bold #{visualization.title}] Visualization
+            h3.mt-4 &#x2002; #[span.font-weight-bold #{visualization.title}] Visualization
             p #{visualization.caption}
 
 
-    section.containter
+    section.container
 
       .row.text-center
         .col-12
           h2 Analytics API
 
+          img(src= `img/varg-api-overview.png`).embed-responsive-item.thumbnail.pending
 
-    section.containter
+
+    section.container
 
       .row.text-center
         .col-12
-          h2 Research
+          h2 Ongoing Research
 
       .row
         .col-12
@@ -88,7 +91,19 @@ html(lang = 'en')
           p Related Work - A big bibtex file?
 
 
-    section.containter
+    section.container
+
+      .row.text-center
+        .col-12
+          h2 Media - Pictures &amp; Videos
+
+      .row
+        each image in MEDIA
+          .col-sm-6.col-lg-4.mb-4
+            .card #[img(src = `${image}` role = 'img').card-img-top]
+
+
+    section.container
 
       .row.text-center
         .col-12
@@ -104,6 +119,10 @@ html(lang = 'en')
       footer.my-5.text-center
         small
           | &copy; #{new Date().getFullYear()} #[a(href = 'https://varg.dev') varg.dev] &thinsp; All rights reserved.
+
+
+    script(src = 'https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js' integrity = 'sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo' crossorigin = 'anonymous')
+    script(src = 'https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js' integrity = 'sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/' crossorigin = 'anonymous')
 
 
   //- // not required when webgl-operate is built-in

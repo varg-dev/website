@@ -1,11 +1,18 @@
 'use strict';
 
+const glob = require('glob');
 const path = require('path');
 const webpack = require('webpack');
 
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+
+// Create named entries for each example.
+let media = {};
+for (const entry of glob.sync('\./application/media/*.png')) {
+    media[path.parse(entry).name] = entry.replace('./application/media/', '/media/');
+}
 
 module.exports = [
 
@@ -86,6 +93,7 @@ module.exports = [
                 patterns: [
                     { from: 'data', to: 'data', force: true },
                     { from: 'img', to: 'img', force: true },
+                    { from: 'media', to: 'media', force: true },
                     { from: 'fonts', to: 'css/fonts', force: true },
                     { from: '../node_modules/webgl-operate/dist/*', to: 'js/[name].[ext]', globOptions: { ignore: ['*.slim.*'] } },
                     { from: '../node_modules/rxjs/bundles/*', to: 'js/[name].[ext]', globOptions: { ignore: ['*.umd.js*'] } },
@@ -100,6 +108,7 @@ module.exports = [
             }),
             new webpack.DefinePlugin({
                 VISUALIZATIONS: JSON.stringify(require('./visualizations.json')),
+                MEDIA: JSON.stringify(media),
             }),
         ],
         output: {
@@ -147,12 +156,6 @@ module.exports = [
                     exclude: /(node_modules)/,
                     use: [{
                         loader: 'pug-loader',
-                        options: {
-                            globals: [{
-                                title: 'Fick Dich',
-                                desc: 'Arschloch',
-                            }],
-                        },
                     }],
                 },
                 {

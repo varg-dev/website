@@ -81,8 +81,16 @@ $h3-font-size: $font-size-base * 1.25 !default;
 // scss-docs-end import-stack
 
 
-section {
-    margin: 4rem 0;
+header {
+    margin-top: 5rem;
+}
+
+section, footer {
+    padding: 4rem 0 0;
+}
+
+footer {
+    margin-bottom: 2rem;
 }
 
 .row h2 {
@@ -130,7 +138,7 @@ footer img {
 }
 
 #visualizations .embed-responsive img.pending {
-    filter: grayscale(100%);
+    filter: grayscale(50%);
 }
 
 #visualizations .embed-responsive:hover img {
