@@ -1,0 +1,146 @@
+@charset "utf-8";
+
+@import "fonts";
+
+
+$link-decoration: none;
+
+
+h1 a, h1 a:hover {
+    color: black;
+    text-decoration: none !important;
+}
+
+h1, h2 {
+    text-transform: uppercase !important;
+}
+
+
+$enable-flex: true;
+$enable-rounded: false;
+
+$font-family-sans-serif: 'Roboto';
+$font-family-monospace: 'Roboto Mono';
+
+$headings-font-weight: 300;
+$font-weight-bold: 700;
+
+$card-spacer-x: 0rem;
+$card-border-width: 0;
+
+$light: white;
+
+$font-size-base: 1rem !default; // Assumes the browser default, typically `16px`
+
+$h3-font-size: $font-size-base * 1.25 !default;
+
+
+
+// bootstrap modules - include path set by package script "sass"
+
+@import "functions";
+@import "variables";
+@import "mixins";
+@import "utilities";
+
+// Layout & components
+@import "root";
+@import "reboot";
+@import "type";
+@import "images";
+@import "containers";
+@import "grid";
+@import "tables";
+@import "forms";
+@import "buttons";
+@import "transitions";
+@import "dropdown";
+@import "button-group";
+@import "nav";
+@import "navbar";
+@import "card";
+@import "breadcrumb";
+@import "pagination";
+@import "badge";
+@import "alert";
+@import "progress";
+@import "list-group";
+@import "close";
+@import "toasts";
+@import "modal";
+@import "tooltip";
+@import "popover";
+@import "carousel";
+@import "spinners";
+
+// Helpers
+@import "helpers";
+
+// Utilities
+@import "utilities/api";
+// scss-docs-end import-stack
+
+
+section {
+    margin: 4rem 0;
+}
+
+.row h2 {
+    margin: 2rem auto !important;
+}
+
+footer img {
+    height: $h5-font-size;
+}
+
+#visualizations {
+	counter-reset: ex;
+}
+#visualizations h3:before {
+  counter-increment: ex;
+  content: counter(ex, decimal-leading-zero);
+}
+
+// #visualizations canvas, #visualizations img {
+//     background-size: contain;
+//     background-repeat: no-repeat;
+// }
+
+#visualizations .vis-btn-group {
+    position: absolute;
+    z-index: 1;
+    right: 0.0rem;
+    bottom: 0.5rem;
+}
+
+#visualizations .thumbnail, #visualizations .vis-btn-group.pending .btn:disabled {
+    cursor: pointer;
+}
+
+#visualizations .thumbnail:hover + .vis-btn-group.pending .btn:disabled {
+    opacity: 1.0;
+}
+
+#visualizations .vis-btn-group.pending .btn:hover {
+    opacity: 1.0;
+}
+
+#visualizations .embed-responsive {
+    overflow: hidden;
+}
+
+#visualizations .embed-responsive:hover img {
+    -webkit-transition: all 0.3s ease-out ; /* Safari and Chrome */
+    -moz-transition: all 0.3s ease-out ; /* Firefox */
+    -o-transition: all 0.3s ease-out ; /* IE 9 */
+    -ms-transition: all 0.3s ease-out ; /* Opera */
+    transition: all 0.3s ease-out ;
+}
+
+#visualizations .embed-responsive:hover img {
+    -webkit-transform:scale(1.02); /* Safari and Chrome */
+    -moz-transform:scale(1.02); /* Firefox */
+    -ms-transform:scale(1.02); /* IE 9 */
+    -o-transform:scale(1.02); /* Opera */
+     transform:scale(1.02);
+}

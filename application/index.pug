@@ -1,0 +1,105 @@
+doctype html
+html(lang = 'en')
+
+  head
+
+    meta(http-equiv = 'x-ua-compatible' content = 'ie=edge')
+    meta(charset='utf-8')
+    meta(name = 'viewport' content = 'width=device-width initial-scale=1')
+
+    title varg.dev
+
+    meta(name = 'robots' content = 'noindex')
+
+    link(rel = 'stylesheet' href = 'css/styles.css')
+
+
+  body.py-4
+
+
+    section.container#title
+      .row.text-center
+        .col
+          img(src = 'img/varg-logo.svg' width = '88pt').img-fluid
+      .row.text-center
+        .col
+          h1.mt-5 #[strong.font-weight-bold Visual Analytics] Research Group
+
+
+    section.container#visualizations
+
+      .row.text-center
+        .col-12
+          h2 Real-Time Visualization
+
+      .row
+
+        each visualization, index in VISUALIZATIONS
+          .col-xs-12.col-sm-6.col-lg-4.my-2
+            .embed-responsive.embed-responsive-4by3
+
+              if visualization.pending
+
+                img(src= `img/vis-pending.webp` id = `thumbnail-${visualization.target}`).embed-responsive-item.thumbnail
+                .vis-btn-group.disabled
+                  button(type = 'button' disabled).btn.btn-sm.btn-dark.mr-2 Implementation pending
+
+              else
+                img(src= `img/vis-${visualization.target}.webp` id = `thumbnail-${visualization.target}`).embed-responsive-item.thumbnail
+
+                .vis-btn-group
+                  each branch in visualization.branches
+                    button(type = 'button').btn.btn-sm.btn-dark.mr-2 #{branch.name}
+
+
+            h3.mt-4 &#x2002 #[span.font-weight-bold #{visualization.title}] Visualization
+            p #{visualization.caption}
+
+
+    section.containter
+
+      .row.text-center
+        .col-12
+          h2 Analytics API
+
+
+    section.containter
+
+      .row.text-center
+        .col-12
+          h2 Research
+
+      .row
+        .col-12
+          p all of our ongoing paper ideas - title and main authors
+          p all of our published papers ... linked to our preferred sites
+          p Related Work - A big bibtex file?
+
+
+    section.containter
+
+      .row.text-center
+        .col-12
+          h2 Resources
+
+      .row
+        .col-12
+          p links to our and other open-source projects: analytics, frameworks, rendering, visualizations, inspiration
+
+
+    section.container
+
+      footer.my-5.text-center
+        small
+          | &copy; #{new Date().getFullYear()} #[a(href = 'https://varg.dev') varg.dev] &thinsp; All rights reserved. &thinsp;
+          | #[strong varg] is a focus group of the #[a(href = 'https://hpi.de/doellner/home.html') Computer Graphics Systems Group]
+          | based in Germany,
+          | at the #[a(href = 'https://hpi.de/') Hasso Plattner Institute], Faculty for Digital Engineering, University of Potsdam.
+
+
+  //- // not required when webgl-operate is built-in
+  //- script(src = 'js/rxjs.umd.min.js')
+  //- script(src = 'js/webgl-operate.js')
+
+  //- script(src = 'js/renderlib.js')
+  //- script(src = 'js/application.js')

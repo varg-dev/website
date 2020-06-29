@@ -1,0 +1,7 @@
+.nyc_output
+.git
+node_modules/
+build/
+.DS_Store
+package-lock.json
+*.code-workspace

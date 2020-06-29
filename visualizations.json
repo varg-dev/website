@@ -1,0 +1,98 @@
+[
+    {
+        "title": "3D Topic Map",
+        "caption": "ToDo\\: brief description here",
+        "target": "topic-map",
+        "pending": false,
+        "branches": [
+            {
+                "target": "vis/topic-map-wagner",
+                "name": "L. Wagner"
+            },
+            {
+                "target": "vis/topic-map",
+                "name": "Stable"
+            }
+        ]
+    },
+    {
+        "title": "2.5D Dust & Magnet",
+        "caption": "ToDo\\: brief description here",
+        "target": "dust-and-magnet",
+        "pending": true,
+        "branches": [
+            {
+                "target": "vis/dust-magnet-vollmer",
+                "name": "J. O. Vollmer"
+            }
+        ]
+    },
+    {
+        "title": "2.5D Treemap",
+        "caption": "ToDo\\: brief description here",
+        "target": "treemap",
+        "pending": false,
+        "branches": [
+            {
+                "target": "vis/treemap-tasam",
+                "name": "TASAM"
+            },
+            {
+                "target": "vis/treemap-limberger",
+                "name": "D. Limberger"
+            },
+            {
+                "target": "vis/treemap-seerene",
+                "name": "Seerene"
+            }
+        ]
+    },
+    {
+        "title": "2.5D Forest",
+        "caption": "ToDo\\: brief description here",
+        "target": "forest",
+        "pending": false,
+        "branches": [
+            {
+                "target": "vis/forest-mp-2020-sose",
+                "name": "MP 2020-SoSe"
+            },
+            {
+                "target": "vis/forest",
+                "name": "Stable"
+            }
+        ]
+    },
+    {
+        "title": "3D Galaxy",
+        "caption": "ToDo\\: brief description here",
+        "target": "galaxy",
+        "pending": false,
+        "branches": [
+            {
+                "target": "vis/galaxy-knoeschke",
+                "name": "T. Knöschke"
+            },
+            {
+                "target": "vis/galaxy",
+                "name": "Stable"
+            }
+        ]
+    },
+    {
+        "title": "3D Volume",
+        "caption": "ToDo\\: brief description here",
+        "target": "auenhaus",
+        "pending": false,
+        "branches": [
+            {
+                "target": "vis/auenhaus-limberger",
+                "name": "D. Limberger"
+            },
+            {
+                "target": "vis/volume-dicom",
+                "name": "DICOM"
+            }
+        ]
+    }
+]
