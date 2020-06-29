@@ -129,6 +129,10 @@ footer img {
     overflow: hidden;
 }
 
+#visualizations .embed-responsive img.pending {
+    filter: grayscale(100%);
+}
+
 #visualizations .embed-responsive:hover img {
     -webkit-transition: all 0.3s ease-out ; /* Safari and Chrome */
     -moz-transition: all 0.3s ease-out ; /* Firefox */

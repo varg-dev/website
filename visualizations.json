@@ -51,7 +51,7 @@
         "title": "2.5D Forest",
         "caption": "ToDo\\: brief description here",
         "target": "forest",
-        "pending": false,
+        "pending": true,
         "branches": [
             {
                 "target": "vis/forest-mp-2020-sose",
@@ -67,7 +67,7 @@
         "title": "3D Galaxy",
         "caption": "ToDo\\: brief description here",
         "target": "galaxy",
-        "pending": false,
+        "pending": true,
         "branches": [
             {
                 "target": "vis/galaxy-knoeschke",

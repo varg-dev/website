@@ -26,6 +26,18 @@ html(lang = 'en')
           h1.mt-5 #[strong.font-weight-bold Visual Analytics] Research Group
 
 
+    section.container
+
+      .row.text-center
+        .col-12
+          p #[strong varg] is a focus group of the #[a(href = 'https://hpi.de/doellner/home.html') Computer Graphics Systems Group] based in Germany, at the #[a(href = 'https://hpi.de/') Hasso Plattner Institute], Faculty for Digital Engineering, University of Potsdam.
+
+          p Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+
+          p Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+
+
+
     section.container#visualizations
 
       .row.text-center
@@ -40,7 +52,7 @@ html(lang = 'en')
 
               if visualization.pending
 
-                img(src= `img/vis-pending.webp` id = `thumbnail-${visualization.target}`).embed-responsive-item.thumbnail
+                img(src= `img/vis-${visualization.target}.webp` id = `thumbnail-${visualization.target}`).embed-responsive-item.thumbnail.pending
                 .vis-btn-group.disabled
                   button(type = 'button' disabled).btn.btn-sm.btn-dark.mr-2 Implementation pending
 
@@ -91,10 +103,7 @@ html(lang = 'en')
 
       footer.my-5.text-center
         small
-          | &copy; #{new Date().getFullYear()} #[a(href = 'https://varg.dev') varg.dev] &thinsp; All rights reserved. &thinsp;
-          | #[strong varg] is a focus group of the #[a(href = 'https://hpi.de/doellner/home.html') Computer Graphics Systems Group]
-          | based in Germany,
-          | at the #[a(href = 'https://hpi.de/') Hasso Plattner Institute], Faculty for Digital Engineering, University of Potsdam.
+          | &copy; #{new Date().getFullYear()} #[a(href = 'https://varg.dev') varg.dev] &thinsp; All rights reserved.
 
 
   //- // not required when webgl-operate is built-in
